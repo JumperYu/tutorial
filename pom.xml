@@ -12,7 +12,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.4.RELEASE</version>
+        <version>1.5.19.RELEASE</version>
     </parent>
 
     <modules>
@@ -21,63 +21,21 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <spring-boot.version>1.5.19.RELEASE</spring-boot.version>
+        <brave.version>5.6.6</brave.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Greenwich.RELEASE</version>
+                <groupId>io.zipkin.brave</groupId>
+                <artifactId>brave-bom</artifactId>
+                <version>5.6.6</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <dependency>
-                <groupId>javax.servlet</groupId>
-                <artifactId>javax.servlet-api</artifactId>
-                <version>3.1.0</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>io.zipkin.java</groupId>
-                <artifactId>zipkin-server</artifactId>
-                <version>2.12.9</version>
-            </dependency>
-            <dependency>
-                <groupId>io.zipkin.java</groupId>
-                <artifactId>zipkin-autoconfigure-ui</artifactId>
-                <version>2.12.9</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-log4j2</artifactId>
-            </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <repositories>
-        <repository>
-            <id>central</id>
-            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-            <name>aliyun</name>
-        </repository>
-        <repository>
-            <id>springsource-repos</id>
-            <name>SpringSource Repository</name>
-            <url>http://repo.spring.io/release/</url>
-        </repository>
-        <repository>
-            <id>central-repos</id>
-            <name>Central Repository</name>
-            <url>http://repo.maven.apache.org/maven2</url>
-        </repository>
-        <repository>
-            <id>central-repos2</id>
-            <name>Central Repository 2</name>
-            <url>http://repo1.maven.org/maven2/</url>
-        </repository>
-    </repositories>
 
     <build>
         <plugins>
