@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>自动跳转页</title>
+    <meta charset="UTF-8"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script>
+        function getQueryVariable(variable) {
+            let query = window.location.search.substring(1);
+            let vars = query.split("&");
+            for (let i = 0; i < vars.length; i++) {
+                let pair = vars[i].split("=");
+                if (pair[0] == variable) {
+                    return pair[1];
+                }
+            }
+            return (false);
+        }
+
+        $(function () {
+            let $SID = $.cookie("SID");
+            let $SetCookie = "http://eye.readingcenter.com/SetCookie?SID=";
+
+            if ($SID) {
+                $("body").append("<img hidden='true' src='" + $SetCookie + $SID + "' />");
+            } else {
+                window.location.href =  "http://ew.vistel.com/index.html";
+            }
+
+            debugger
+
+            let redirectUrl = getQueryVariable("redirectUrl");
+            if (redirectUrl) {
+                window.location.href = redirectUrl;
+            } else {
+                window.location.href =  "http://ew.vistel.com/index.html";
+            }
+        })
+    </script>
+</head>
+<body>
+jumping...
+</body>
+</html>

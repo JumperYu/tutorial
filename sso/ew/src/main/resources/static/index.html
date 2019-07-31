@@ -1,5 +1,34 @@
 <html>
+<title>EyeWisdom</title>
+<meta charset="UTF-8"/>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script>
+    $(function () {
+        let $SID = $.cookie("SID");
+        if ($SID) {
+            $("#welcome").text("Welcome").show();
+        } else {
+            $("#welcome").text("Anonymous").show();
+        }
+        $("#clickToLogin").click(function (e) {
+            window.location.href = "http://uc.vistel.com/Login";
+        })
+        $("#clickToLogout").click(function (e) {
+            document.cookie = '';
+            window.location.href = "/";
+        })
+        $("#clickToRefresh").click(function (e) {
+            window.location.href = "/";
+        })
+    })
+</script>
 <body>
-<h1>heihei</h1>
+<div id="main" style="text-align: center;margin-top: 200px;">
+    <div id="welcome" style="margin-bottom: 50px;"></div>
+    <button id="clickToLogin">点我登陆</button>
+    <button id="clickToLogout">点我退出</button>
+    <button id="clickToRefresh">点我刷新</button>
+</div>
 </body>
 </html>
