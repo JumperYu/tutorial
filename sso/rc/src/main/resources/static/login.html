@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>阅片中心登陆页</title>
+    <meta charset="UTF-8"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script>
+        $(function () {
+
+        })
+    </script>
+</head>
+<body>
+<div class="main account">
+    <form role="form" action="http://uc.vistel.com/login" method="post">
+        <p>登录账号</p>
+        <input type="text" placeholder="输入账号" class="form-control" id="userName" name="username" required="">
+        <p>用户密码</p>
+        <input type="password" placeholder="输入密码" class="form-control" id="password" name="password" required="">
+        <input type="hidden" id="system" name="system" value="ew">
+        <div class="bt">
+            <button class="btn btn-primary login-btn" type="submit">登录</button>
+        </div>
+    </form>
+    <div class="noPwd"></div>
+</div>
+</body>
+</html>

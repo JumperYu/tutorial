@@ -1,0 +1,5 @@
+#spring:
+#  cache:
+#    cache-names: appCache
+#    caffeine:
+#      spec: maximumSize=128,expireAfterAccess=30s
